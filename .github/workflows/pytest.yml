@@ -25,3 +25,7 @@ jobs:
 
     - name: Run tests
       run: pytest tests
+
+    - name: Do Something after pytest
+      if: steps.pytest-step.outcome == 'success'
+      run: echo "Tests Passed!"
